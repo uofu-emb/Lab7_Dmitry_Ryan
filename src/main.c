@@ -7,12 +7,22 @@
 #include <sys/byteorder.h>
 
 //messsage
-struct zcan_frame frame = {
+struct zcan_frame frame1 = {
                 .id_type = CAN_STANDARD_IDENTIFIER,
                 .rtr = CAN_DATAFRAME,
                 .id = 0x123,
                 .dlc = 8,
                 .data = {1,2,3,4,5,6,7,8}
+				
+
+        };
+
+		struct zcan_frame frame2 = {
+                .id_type = CAN_STANDARD_IDENTIFIER,
+                .rtr = CAN_DATAFRAME,
+                .id = 0x456,
+                .dlc = 8,
+                .data = {1,2,3}
 
         };
 
@@ -31,10 +41,16 @@ int filter_id1;
 
 void send_message(void)
 {
-        ret = can_send(can_dev, &frame, K_MSEC(100), NULL, NULL);
+        ret = can_send(can_dev, &frame1, K_MSEC(100), NULL, NULL); // send message 1
         if (ret != CAN_TX_OK) {
                         printk("Sending failed [%d]", ret);
                 }     
+
+		 ret = can_send(can_dev, &frame2, K_MSEC(100), NULL, NULL); //send message 2
+		 if (ret != CAN_TX_OK) {
+                        printk("Sending failed [%d]", ret);
+                }     
+
 }
 
 
@@ -51,14 +67,16 @@ void main(void)
 {
    //Activity 0
         can_dev = device_get_binding("CAN_1");
-        can_set_mode(can_dev, CAN_LOOPBACK_MODE);
+        //can_set_mode(can_dev, CAN_LOOPBACK_MODE);
+		can_set_mode(can_dev, CAN_NORMAL_MODE);
         
         while(1)
         {
                 send_message();
         }
         
-        rx_callback_function(&frame, NULL);
+        rx_callback_function(&frame1, NULL);
+		rx_callback_function(&frame2, NULL);
 
         
         //printk("Print data[%d]", can_dev->data);

@@ -1,19 +1,79 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "PlatformIO",
             "includePath": [
-                "${workspaceFolder}/**"
+                "c:/Users/Alex/Documents/PlatformIO/Projects/Lab7/Lab7_Dmitry_Ryan/include",
+                "c:/Users/Alex/Documents/PlatformIO/Projects/Lab7/Lab7_Dmitry_Ryan/src",
+                "C:/Users/Alex/.platformio/packages/framework-zephyr/include",
+                "C:/Users/Alex/Documents/PlatformIO/Projects/Lab7/Lab7_Dmitry_Ryan/.pio/build/disco_board/zephyr/include/generated",
+                "C:/Users/Alex/.platformio/packages/framework-zephyr/soc/arm/st_stm32/stm32f0",
+                "C:/Users/Alex/.platformio/packages/framework-zephyr/drivers",
+                "C:/Users/Alex/.platformio/packages/framework-zephyr/soc/arm/st_stm32/common",
+                "C:/Users/Alex/.platformio/packages/framework-zephyr/_pio/modules/hal/cmsis/CMSIS/Core/Include",
+                "C:/Users/Alex/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/soc",
+                "C:/Users/Alex/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/drivers/include",
+                "C:/Users/Alex/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/drivers/include/Legacy",
+                "C:/Users/Alex/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/common_ll/include",
+                ""
             ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "c:/Users/Alex/Documents/PlatformIO/Projects/Lab7/Lab7_Dmitry_Ryan/include",
+                    "c:/Users/Alex/Documents/PlatformIO/Projects/Lab7/Lab7_Dmitry_Ryan/src",
+                    "C:/Users/Alex/.platformio/packages/framework-zephyr/include",
+                    "C:/Users/Alex/Documents/PlatformIO/Projects/Lab7/Lab7_Dmitry_Ryan/.pio/build/disco_board/zephyr/include/generated",
+                    "C:/Users/Alex/.platformio/packages/framework-zephyr/soc/arm/st_stm32/stm32f0",
+                    "C:/Users/Alex/.platformio/packages/framework-zephyr/drivers",
+                    "C:/Users/Alex/.platformio/packages/framework-zephyr/soc/arm/st_stm32/common",
+                    "C:/Users/Alex/.platformio/packages/framework-zephyr/_pio/modules/hal/cmsis/CMSIS/Core/Include",
+                    "C:/Users/Alex/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/soc",
+                    "C:/Users/Alex/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/drivers/include",
+                    "C:/Users/Alex/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/drivers/include/Legacy",
+                    "C:/Users/Alex/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/common_ll/include",
+                    ""
+                ]
+            },
             "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
+                "PLATFORMIO=60111",
+                "STM32F072xB",
+                "BUILD_VERSION=zephyr-v20701",
+                "HSE_VALUE=8000000",
+                "KERNEL",
+                "STM32F072xB",
+                "USE_FULL_LL_DRIVER",
+                "USE_HAL_DRIVER",
+                "_FORTIFY_SOURCE=2",
+                "__PROGRAM_START",
+                "__ZEPHYR__=1",
+                ""
             ],
-            "compilerPath": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
-            "cStandard": "c17",
-            "cppStandard": "gnu++17",
-            "intelliSenseMode": "windows-gcc-x64"
+            "cStandard": "c99",
+            "forcedInclude": [
+                "C:/Users/Alex/Documents/PlatformIO/Projects/Lab7/Lab7_Dmitry_Ryan/.pio/build/disco_board/zephyr/include/generated/autoconf.h",
+                "C:/Users/Alex/.platformio/packages/framework-zephyr/include/toolchain/zephyr_stdint.h",
+                ""
+            ],
+            "compilerPath": "C:/Users/Alex/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-gcc.exe",
+            "compilerArgs": [
+                "-mcpu=cortex-m0",
+                "-mthumb",
+                "-mabi=aapcs",
+                "-mfp16-format=ieee",
+                "-isystem",
+                "C:/Users/Alex/.platformio/packages/framework-zephyr/lib/libc/minimal/include",
+                "-isystem",
+                "c:/users/alex/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/8.2.1/include",
+                "-isystem",
+                "c:/users/alex/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/8.2.1/include-fixed",
+                ""
+            ]
         }
     ],
     "version": 4
