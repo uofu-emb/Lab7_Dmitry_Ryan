@@ -1,3 +1,5 @@
+//LAB 7 - CAN Bus
+
 #include <zephyr.h>
 #include <kernel.h>
 #include <sys/printk.h>
@@ -5,9 +7,13 @@
 #include <drivers/can.h>
 #include <drivers/gpio.h>
 #include <sys/byteorder.h>
+#include <stdio.h>
+
+K_MSGQ_DEFINE(receive, sizeof(int), 100, 4);
 
 //messsage
-struct zcan_frame frame1 = {
+struct zcan_frame frame1 = 
+        {
                 .id_type = CAN_STANDARD_IDENTIFIER,
                 .rtr = CAN_DATAFRAME,
                 .id = 0x123,
@@ -27,7 +33,8 @@ struct zcan_frame frame1 = {
         };
 
 //filter
-const struct zcan_filter my_filter = {
+const struct zcan_filter my_filter =
+ {
         .id_type = CAN_STANDARD_IDENTIFIER,
         .rtr = CAN_DATAFRAME,
         .id = 0x123,
@@ -57,7 +64,17 @@ void send_message(void)
 
 void rx_callback_function(struct zcan_frame *frame, void *arg)
 {
-        filter_id1 = can_attach_isr(can_dev, rx_callback_function, arg, &my_filter);
+      //  filter_id1 = can_attach_isr(can_dev, rx_callback_function, arg, &my_filter);
+        filter_id1 = can_attach_msgq(can_dev, rx_callback_function, &my_filter); //message queue
+        if (filter_id1 < 0) {
+                printk("Unable to attach isr [%d]", filter_id1);
+        }
+}
+
+void rx_callback_functionq(struct k_msgq *recieve, void *arg)
+{
+      //  filter_id1 = can_attach_isr(can_dev, rx_callback_function, arg, &my_filter);
+        filter_id1 = can_attach_msgq(can_dev, rx_callback_functionq, &my_filter); //message queue
         if (filter_id1 < 0) {
                 printk("Unable to attach isr [%d]", filter_id1);
         }
@@ -70,9 +87,18 @@ void main(void)
         //can_set_mode(can_dev, CAN_LOOPBACK_MODE);
 		can_set_mode(can_dev, CAN_NORMAL_MODE);
         
+        int message1;  //integer ID of message
         while(1)
         {
                 send_message();
+             
+                message1 = k_msgq_get (&receive, &frame1, K_FOREVER); //check if babbling message is blocking low priority msg = nothing in queue
+                //printk(message1);
+                printf("recieved: %d", message1);
+                
+                        
+                
+  
         }
         
         rx_callback_function(&frame1, NULL);
