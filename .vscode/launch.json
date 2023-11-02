@@ -12,11 +12,11 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug",
-            "executable": "c:/Users/Alex/Documents/PlatformIO/Projects/Lab7/Lab7_Dmitry_Ryan/.pio/build/disco_board/firmware.elf",
+            "executable": "C:/Users/richk/ECE_5960_Lab7/Lab7_Dmitry_Ryan/.pio/build/disco_board/firmware.elf",
             "projectEnvName": "disco_board",
-            "toolchainBinDir": "C:/Users/Alex/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "toolchainBinDir": "C:/Users/richk/.platformio/packages/toolchain-gccarmnoneeabi@1.80201.181220/bin",
             "internalConsoleOptions": "openOnSessionStart",
-            "svdPath": "C:/Users/Alex/.platformio/platforms/ststm32/misc/svd/STM32F072x.svd",
+            "svdPath": "C:/Users/richk/.platformio/platforms/ststm32/misc/svd/STM32F072x.svd",
             "preLaunchTask": {
                 "type": "PlatformIO",
                 "task": "Pre-Debug"
@@ -26,21 +26,21 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (skip Pre-Debug)",
-            "executable": "c:/Users/Alex/Documents/PlatformIO/Projects/Lab7/Lab7_Dmitry_Ryan/.pio/build/disco_board/firmware.elf",
+            "executable": "C:/Users/richk/ECE_5960_Lab7/Lab7_Dmitry_Ryan/.pio/build/disco_board/firmware.elf",
             "projectEnvName": "disco_board",
-            "toolchainBinDir": "C:/Users/Alex/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "toolchainBinDir": "C:/Users/richk/.platformio/packages/toolchain-gccarmnoneeabi@1.80201.181220/bin",
             "internalConsoleOptions": "openOnSessionStart",
-            "svdPath": "C:/Users/Alex/.platformio/platforms/ststm32/misc/svd/STM32F072x.svd"
+            "svdPath": "C:/Users/richk/.platformio/platforms/ststm32/misc/svd/STM32F072x.svd"
         },
         {
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (without uploading)",
-            "executable": "c:/Users/Alex/Documents/PlatformIO/Projects/Lab7/Lab7_Dmitry_Ryan/.pio/build/disco_board/firmware.elf",
+            "executable": "C:/Users/richk/ECE_5960_Lab7/Lab7_Dmitry_Ryan/.pio/build/disco_board/firmware.elf",
             "projectEnvName": "disco_board",
-            "toolchainBinDir": "C:/Users/Alex/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "toolchainBinDir": "C:/Users/richk/.platformio/packages/toolchain-gccarmnoneeabi@1.80201.181220/bin",
             "internalConsoleOptions": "openOnSessionStart",
-            "svdPath": "C:/Users/Alex/.platformio/platforms/ststm32/misc/svd/STM32F072x.svd",
+            "svdPath": "C:/Users/richk/.platformio/platforms/ststm32/misc/svd/STM32F072x.svd",
             "loadMode": "manual"
         }
     ]
