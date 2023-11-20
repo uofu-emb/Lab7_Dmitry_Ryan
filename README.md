@@ -45,7 +45,3 @@ Observed: 1 MCU was set to send a high priority message periodically while a 2nd
           to be sent on the high line. The culprit of this was the low priority
           sender/MCU. Due to how it interrrupts the high priority sender/MCU to 
           not allow any messages to be sent on the bus line.
-
-
-
-          We observed that the lower priority sender would interrupt sending when a message was known on the receiving line. It prevented even one message from getting through.
